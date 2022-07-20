@@ -6,6 +6,8 @@
 # Install some deps if they're not there
 if ! command -v nvim &> /dev/null
 then
+  sudo add-apt-repository -y ppa:neovim-ppa/unstable
+  sudo add-apt-repository -y ppa:aos1/diff-so-fancy
   sudo apt-get update -qq && \
   sudo apt-get install -o Dpkg::Options::=--force-confdef -yq --no-install-recommends \
   diff-so-fancy \
