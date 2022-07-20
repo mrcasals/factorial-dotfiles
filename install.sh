@@ -21,7 +21,6 @@ then
   sudo rm -rf /var/lib/apt/lists/*
 fi
 
-
 ~/bin/chezmoi init
 
 pushd ~/.local/share/chezmoi
