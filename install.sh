@@ -1,11 +1,13 @@
 #!/bin/bash
 
 # Install chezmoi if it doesn't exist so that we can actually install dotfiles
+echo "chezmoi install"
 [[ ! -f ~/bin/chezmoi ]] && sh -c "$(curl -fsLS chezmoi.io/get)"
 
 # Install some deps if they're not there
 if ! command -v nvim &> /dev/null
 then
+  echo "deps install"
   sudo add-apt-repository -y ppa:neovim-ppa/unstable
   sudo add-apt-repository -y ppa:aos1/diff-so-fancy
   sudo apt-get update -qq && \
@@ -21,6 +23,7 @@ then
   sudo rm -rf /var/lib/apt/lists/*
 fi
 
+echo "chezmoi init"
 ~/bin/chezmoi init
 
 pushd ~/.local/share/chezmoi
@@ -29,6 +32,7 @@ pushd ~/.local/share/chezmoi
   git pull origin main
 popd
 
+echo "chezmoi apply"
 ~/bin/chezmoi apply
 
 source ~/.bashrc
