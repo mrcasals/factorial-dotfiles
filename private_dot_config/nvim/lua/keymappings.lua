@@ -11,3 +11,8 @@ vim.keymap.set("v", ">", ">gv", { silent = true })
 -- Move selected line / block of text in visual mode
 vim.keymap.set("x", "K", ":move '<-2<CR>gv-gv", { silent = true })
 vim.keymap.set("x", "J", ":move '>+1<CR>gv-gv", { silent = true })
+
+-- Custom mappings
+vim.keymap.set("n", "<Leader>w", ":w!<CR>", { silent = true })
+vim.keymap.set("n", "<Leader>q", ":qa<CR>", { silent = true })
+vim.keymap.set("i", "jk", "<ESC>", { silent = true })
