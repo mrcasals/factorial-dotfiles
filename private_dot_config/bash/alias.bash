@@ -51,6 +51,7 @@ alias gps="git push"
 alias gpl="git pull"
 alias ggpush='git push origin "$(git_current_branch)"'
 alias ggpull='git pull origin "$(git_current_branch)"'
+alias fixvim="nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' & disown"
 
 function git_current_branch() {
   local ref
